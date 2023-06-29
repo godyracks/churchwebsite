@@ -1,0 +1,74 @@
+.card {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+ }
+
+ .card-header {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+ }
+
+ .card-body {
+    margin-top: 10px;
+ }
+
+ .add-product-form input[type="text"],
+ .add-product-form textarea {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+ }
+
+ .add-product-form input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+ }
+
+ .product-card {
+    margin-bottom: 20px;
+ }
+
+ .product-card .card-body {
+    display: flex;
+    align-items: center;
+ }
+
+ .product-card .card-body img {
+    width: 100px;
+    margin-right: 20px;
+ }
+
+ .product-card .card-body .product-info {
+    flex: 1;
+ }
+
+ .product-card .card-body .product-info h4 {
+    margin-bottom: 5px;
+ }
+
+ .product-card .card-body .delete-btn {
+    color: red;
+ }
+
+ .product-card .card-body .delete-btn:hover {
+    text-decoration: none;
+ }
+
+ .product-card .card-body .edit-btn {
+    color: blue;
+    margin-right: 5px;
+ }
+
+ .product-card .card-body .edit-btn:hover {
+    text-decoration: none;
+ }

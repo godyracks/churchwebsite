@@ -1,0 +1,68 @@
+
+.w3l-mockup-form {
+    background-color: #f7f7f7;
+    padding: 50px 0;
+}
+
+.w3l-mockup-form .container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.w3l-mockup-form .main-mockup {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.w3l-mockup-form h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.w3l-mockup-form p {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+.w3l-mockup-form form input[type="text"],
+.w3l-mockup-form form input[type="email"],
+.w3l-mockup-form form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #555555;
+    margin-bottom: 15px;
+}
+
+.w3l-mockup-form form button {
+    background-color: #dcdcdc;
+    color: #333333;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.w3l-mockup-form form button:hover {
+    background-color: #b9b9b9;
+}
+
+.w3l-mockup-form .social-icons {
+    font-size: 14px;
+    color: #666666;
+}
+
+.w3l-mockup-form .social-icons a {
+    color: #888888;
+    text-decoration: none;
+}
