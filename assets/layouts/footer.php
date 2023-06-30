@@ -21,7 +21,7 @@
                 </div>
                 <div class="span3" id="footerArea2">
 
-                    <h3>Recent Blog Posts</h3> 
+                    <h3>Recent Articles</h3> 
                     <p>
                         <a href="#" title="">Lorem Ipsum is simply dummy text</a><br />
                         <span style="text-transform:none;">2 hours ago</span>
@@ -35,7 +35,7 @@
                         <span style="text-transform:none;">19 hours ago</span>
                     </p>
                     <p>
-                        <a href="#" title="">VIEW ALL POSTS</a>
+                        <a href="#" title="">VIEW ALL ARTICLES</a>
                     </p>
 
                 </div>
@@ -81,14 +81,14 @@
             <div class="row-fluid">
                 <div class="span12">
                     <p class="copyright">
-                        Copyright © 2023 KAG Emanuels' Church. All Rights Reserved.
+                        Copyright © 2023 SDA Crater Church. All Rights Reserved.
                     </p>
 
                     <p class="social_bookmarks">
                         <a href="#"><i class="social foundicon-facebook"></i> Facebook</a>
 			<a href=""><i class="social foundicon-twitter"></i> Twitter</a>
-			<a href="#"><i class="social foundicon-pinterest"></i> Pinterest</a>
-			<a href="#"><i class="social foundicon-rss"></i> Rss</a>
+			<!-- <a href="#"><i class="social foundicon-pinterest"></i> Pinterest</a> -->
+			<a href="#"><i class="social foundicon-youtube"></i> YouTube</a>
                     </p>
                 </div>
             </div>

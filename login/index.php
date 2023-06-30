@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
 
         if (password_verify($password, $hashed_password)) {
             if ($row['is_verified'] == 1) {
-                if ($email == 'gmatagaro4@gmail.com') {
+                if ($email == 'onyinkwagodfrey68@gmail.com') {
                     // Check if the user is an admin
                     $_SESSION['SESSION_EMAIL'] = $email;
                     $_SESSION['SESSION_NAME'] = $row['name'];

@@ -45,7 +45,7 @@
                     <div class="row-fluid">
                         <div class="span8">
 
-                            <h3>This Sunday ...</h3>         
+                            <h3>This Saturday ...</h3>         
 
                             <p>
                                 <img src="../images/spring-is-coming.jpg" class="img-polaroid" style="margin:12px 0px;" alt="">  
@@ -59,7 +59,7 @@
                         </div>
                         <div class="span4 sidebar">
 
-                            <div class="sidebox">
+                        <div class="sidebox">
                                 <h3 class="sidebox-title">Join Us</h3>
                                 <p>Become a member of our family in Christ today, no matter where you are in the world. You don't need to be present physically, we are One fold, under One shepherd: Christ. We're looking forward to meeting you!</p>
                                 <form method="post" action="#">

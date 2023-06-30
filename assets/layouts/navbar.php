@@ -1,3 +1,10 @@
+
+<style>
+    .logo-image {
+        max-width: 100px;
+        height: auto;
+    }
+</style>
 <div id="decorative2">
     <div class="container">
 
@@ -6,8 +13,11 @@
                 <div class="span12">
 
                     <div id="divLogo" class="pull-left">
-                        <a href="../home" id="divSiteTitle">KAG Emmanuel's Church</a><br />
-                        <a href="../home" id="divTagLine">One Fold, One Shepherd</a>
+                        <a href="../home" id="divSiteTitle">                        <a href="../home" id="divSiteTitle">
+                            <img src="../images/sda-logo1.jpg" alt="Logo" class="logo-image">
+                        </a><br />
+
+                        <a href="../home" id="divTagLine">SDA Crater Church</a>
                     </div>
 
                     <div id="divMenuRight" class="pull-right">
@@ -20,7 +30,7 @@
                                     <?php
                                    //session_start();
                                     // Check if the user is an admin based on their email
-                                    if (isset($_SESSION['SESSION_EMAIL']) && $_SESSION['SESSION_EMAIL'] == 'gmatagaro4@gmail.com') {
+                                    if (isset($_SESSION['SESSION_EMAIL']) && $_SESSION['SESSION_EMAIL'] == 'onyinkwagodfrey68@gmail.com') {
                                         echo '<li class="dropdown active"><a href="../admin">Admin</a></li>';
                                     }
                                     

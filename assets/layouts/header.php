@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="custom.css" >
 
     <script src="https://kit.fontawesome.com/af562a2a63.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"> -->
     
 </head>
 <body id="pageBody">

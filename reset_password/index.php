@@ -61,6 +61,11 @@ if (isset($_GET['token'])) {
 <?php require_once('../assets/layouts/header.php'); ?>
 <!-- Rest of the HTML code -->
 
+<br />
+<br />
+<br />
+<br />
+<br />
 <div class="container">
     <div class="content-wthree">
         <h2>Reset Password</h2>

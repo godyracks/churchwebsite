@@ -105,10 +105,10 @@ if (isset($_POST['update_sermon'])) {
 
             if (mysqli_stmt_affected_rows($update_query) > 0) {
                 $message[] = 'Sermon updated successfully';
-                header('location:admin/index.php');
+                header('location:../admin/index.php');
             } else {
                 $message[] = 'Sermon could not be updated';
-                header('location:admin/index.php');
+                header('location:../admin/index.php');
             }
 
             mysqli_stmt_close($update_query);
@@ -121,10 +121,10 @@ if (isset($_POST['update_sermon'])) {
 
         if (mysqli_stmt_affected_rows($update_query) > 0) {
             $message[] = 'Sermon updated successfully';
-            header('location:admin/index.php');
+            header('location:../admin/index.php');
         } else {
             $message[] = 'Sermon could not be updated';
-            header('location:admin/index.php');
+            header('location:../admin/index.php');
         }
 
         mysqli_stmt_close($update_query);
@@ -158,10 +158,10 @@ if (isset($_GET['delete_event'])) {
     mysqli_stmt_execute($delete_event_query);
 
     if (mysqli_stmt_affected_rows($delete_event_query) > 0) {
-        header('location:admin/index.php');
+        header('location:../admin/index.php');
         $message[] = 'Event has been deleted';
     } else {
-        header('location:admin/index.php');
+        header('location:../admin/index.php');
         $message[] = 'Event could not be deleted';
     }
 
@@ -181,14 +181,34 @@ if (isset($_POST['update_event'])) {
 
     if (mysqli_stmt_affected_rows($update_event_query) > 0) {
         $message[] = 'Event updated successfully';
-        header('location:admin/index.php');
+        header('location:../admin/index.php');
     } else {
         $message[] = 'Event could not be updated';
-        header('location:admin/index.php');
+        header('location:../admin/index.php');
     }
 
     mysqli_stmt_close($update_event_query);
 }
+
+// Add Sermon Video
+if (isset($_POST['add_sermon_video'])) {
+    $sermon_video_title = sanitizeInput($_POST['sermon_video_title']);
+    $sermon_video_url = sanitizeInput($_POST['sermon_video_url']);
+
+    // Insert the sermon video record into the database
+    $insert_query = mysqli_prepare($conn, "INSERT INTO `sermon_videos` (title, url) VALUES (?, ?)");
+    mysqli_stmt_bind_param($insert_query, "ss", $sermon_video_title, $sermon_video_url);
+    mysqli_stmt_execute($insert_query);
+
+    if (mysqli_stmt_affected_rows($insert_query) > 0) {
+        $message[] = 'Sermon video added successfully';
+    } else {
+        $message[] = 'Could not add the sermon video';
+    }
+
+    mysqli_stmt_close($insert_query);
+}
+
 
 
 // Delete  Sermon Videos
@@ -209,17 +229,45 @@ if (isset($_GET['delete_sermon_video'])) {
     mysqli_stmt_close($delete_query);
 }
 
+// Add Ministry
+if (isset($_POST['add_ministry'])) {
+    $ministry_name = sanitizeInput($_POST['ministry_name']);
+    $ministry_description = sanitizeInput($_POST['ministry_description']);
+
+    // Insert the ministry record into the database
+    $insert_query = mysqli_prepare($conn, "INSERT INTO `ministries` (name, description) VALUES (?, ?)");
+    mysqli_stmt_bind_param($insert_query, "ss", $ministry_name, $ministry_description);
+    mysqli_stmt_execute($insert_query);
+
+    if (mysqli_stmt_affected_rows($insert_query) > 0) {
+        $message[] = 'Ministry added successfully';
+    } else {
+        $message[] = 'Could not add the ministry';
+    }
+
+    mysqli_stmt_close($insert_query);
+}
 
 
+// Delete  Ministry
+if (isset($_GET['delete_ministry'])) {
+    $delete_id = sanitizeInput($_GET['delete_ministry']);
+    $delete_query = mysqli_prepare($conn, "DELETE FROM `ministries` WHERE id = ?");
+    mysqli_stmt_bind_param($delete_query, "i", $delete_id);
+    mysqli_stmt_execute($delete_query);
 
+    if (mysqli_stmt_affected_rows($delete_query) > 0) {
+        header('location:../admin/index.php');
+        $message[] = 'Ministry has been deleted';
+    } else {
+        header('location:../admin/index.php');
+        $message[] = 'Ministry  could not be deleted';
+    }
 
-
-
-
-
-
-
-
+    mysqli_stmt_close($delete_query);
+}
 
 
 ?>
+
+

@@ -3,14 +3,160 @@
 
 ?>
 <?php require_once('../assets/layouts/header.php'); ?>
+<style>
+   .welcome-section {
+   background-color: #2ecc71;
+   color: white;
+   padding: 10px;
+   margin-bottom: 10px;
+   //position: static;
+}
+
+.logout-button {
+   background-color: #e74c3c;
+   color: white;
+   padding: 10px;
+   border: none;
+   border-radius: 4px;
+   text-decoration: none;
+}
+
+.logout-button:hover {
+   background-color: #c0392b;
+
+   //
+   
+
+.card {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+ }
+
+ .card-header {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+ }
+
+ .card-body {
+    margin-top: 10px;
+ }
+
+ .add-product-form input[type="text"],
+ .add-product-form textarea {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+ }
+
+ .add-product-form input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+ }
+
+ .product-card {
+    margin-bottom: 20px;
+ }
+
+ .product-card .card-body {
+    display: flex;
+    align-items: center;
+ }
+
+ .product-card .card-body img {
+    width: 100px;
+    margin-right: 20px;
+ }
+
+ .product-card .card-body .product-info {
+    flex: 1;
+ }
+
+ .product-card .card-body .product-info h4 {
+    margin-bottom: 5px;
+ }
+
+ .product-card .card-body .delete-btn {
+    color: red;
+ }
+
+ .product-card .card-body .delete-btn:hover {
+    text-decoration: none;
+ }
+
+ .product-card .card-body .edit-btn {
+    color: blue;
+    margin-right: 5px;
+ }
+
+ .product-card .card-body .edit-btn:hover {
+    text-decoration: none;
+ }
+}
+
+
+
+</style>
+<!-- 
+ <?php
+// if (isset($message)) {
+//    foreach ($message as $message) {
+//       echo '<div class="message"><span>'.$message.'</span> <i class="fas fa-times" onclick="this.parentElement.style.display = `none`;"></i></div>';
+//    }
+// }
+?> --> 
 
 <?php
 if (isset($message)) {
-   foreach ($message as $message) {
-      echo '<div class="message"><span>'.$message.'</span> <i class="fas fa-times" onclick="this.parentElement.style.display = `none`;"></i></div>';
-   }
+    foreach ($message as $message) {
+        echo '<div class="message"><span>'.$message.'</span> <i class="fas fa-times" onclick="this.parentElement.style.display = `none`;"></i></div>';
+    }
+}
+
+// Add this code to display the delete confirmation message
+$deleteParam = isset($_GET['delete']) ? $_GET['delete'] : (isset($_GET['delete_event']) ? $_GET['delete_event'] : (isset($_GET['delete_sermon_video']) ? $_GET['delete_sermon_video'] : (isset($_GET['delete_ministry']) ? $_GET['delete_ministry'] : '')));
+$deleteType = '';
+$messageHeader = '';
+if (isset($_GET['delete_ministry'])) {
+    $deleteType = 'ministry';
+    $messageHeader = 'Delete Ministry';
+} elseif (isset($_GET['delete_event'])) {
+    $deleteType = 'event';
+    $messageHeader = 'Delete Event';
+} elseif (isset($_GET['delete_sermon_video'])) {
+    $deleteType = 'sermon video';
+    $messageHeader = 'Delete Sermon Video';
+} elseif (isset($_GET['delete'])) {
+    $deleteType = 'sermon';
+    $messageHeader = 'Delete Sermon';
+}
+
+if ($deleteParam && $deleteType) {
+    echo '
+        <div class="message-overlay">
+            <div class="message-card">
+                <div class="message-header">'.$messageHeader.'</div>
+                <div class="message-body">
+                    <p>Are you sure you want to delete this '.$deleteType.'?</p>
+                    <div class="button-container">
+                        <a href="../admin/index.php?delete_'.$deleteType.'='.$deleteParam.'" class="btn btn-danger">OK</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    ';
 }
 ?>
+
 
 <div id="headerSeparator"></div>
 <div id="headerSeparator2"></div>
@@ -21,7 +167,8 @@ if (isset($message)) {
 <?php if (mysqli_num_rows($query) > 0) {
     $row = mysqli_fetch_assoc($query);
 
-    echo "Welcome " . $row['name'] . " <a href='../logout'>Logout</a>";
+    echo '<div class="welcome-section">Welcome ' . $row['name'] . '</div>';
+    echo '<a href="../logout" class="logout-button">Logout</a>';
 }
 ?>
 
@@ -128,7 +275,7 @@ if (isset($message)) {
                                     <p>'.$row['event_date'].'</p>
                                     <div class="btn-group">
                                        <a href="../admin/index.php?delete_event='.$row['id'].'" class="btn btn-danger delete">
-                                          <i class="fas fa-trash-alt"></i> Delete
+                                          <i class="fas fa-trash"></i> Delete
                                        </a>
                                        <a href="#" class="btn btn-primary edit">
                                           <i class="fas fa-edit"></i> Edit
@@ -165,7 +312,7 @@ if (isset($message)) {
                                     <p>'.$row['url'].'</p>
                                     <div class="btn-group">
                                        <a href="../admin/index.php?delete_sermon_video='.$row['id'].'" class="btn btn-danger delete">
-                                          <i class="fas fa-trash-alt"></i> Delete
+                                          <i class="fas fa-trash"></i> Delete
                                        </a>
                                        <a href="#" class="btn btn-primary edit">
                                           <i class="fas fa-edit"></i> Edit
@@ -200,7 +347,7 @@ if (isset($message)) {
                                     <p>'.htmlspecialchars_decode($row['description']).'</p>
                                     <div class="btn-group">
                                        <a href="../admin/index.php?delete_ministry='.$row['id'].'" class="btn btn-danger delete">
-                                          <i class="fas fa-trash-alt"></i> Delete
+                                          <i class="fas fa-trash"></i> Delete
                                        </a>
                                        <a href="#" class="btn btn-primary edit">
                                           <i class="fas fa-edit"></i> Edit
@@ -223,13 +370,3 @@ if (isset($message)) {
 </div>
 
 <?php require_once('../assets/layouts/footer.php'); ?>
-<script>
-   // Initialize CKEditor on textarea elements with the 'custom-editor' class
-   document.querySelectorAll('textarea.custom-editor').forEach(textarea => {
-      ClassicEditor
-         .create(textarea)
-         .catch(error => {
-            console.error(error);
-         });
-   });
-</script>

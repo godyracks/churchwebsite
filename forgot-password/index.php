@@ -51,7 +51,7 @@ if (isset($_POST['submit'])) {
 
                 $mail->isHTML(true);
                 $mail->Subject = 'Reset your password';
-                $mail->Body = 'Please click on the following link to reset your password: <b><a href="http://localhost/guka/reset_password?token=' . $token . '">http://localhost/guka/reset_password?token=' . $token . '</a></b>';
+                $mail->Body = 'Please click on the following link to reset your password: <b><a href="http://localhost/sdacraterchurch/reset_password?token=' . $token . '">http://localhost/sdacraterchurch/reset_password?token=' . $token . '</a></b>';
 
                 $mail->send();
 

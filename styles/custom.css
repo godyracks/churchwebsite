@@ -226,7 +226,7 @@ a {
 
 body {background-image: none; background-position: initial initial; background-repeat: initial initial; }
 
-#divLogo {margin-top: 9px; margin-bottom: 0px; margin-left: -3px;}
+#divLogo {margin-top: 9px; margin-bottom: 0px; margin-left: -3px; }
 
 #divSiteTitle {font-family: 'Source Sans Pro', sans-serif; color:#B85305; font-size: 20px; text-shadow: rgba(0, 0, 0, 0.2) 2px 5px 9px, rgba(255, 255, 255, 0.298039) 0px -5px 35px; line-height: 30px; letter-spacing: 1px; text-transform:capitalize; font-weight: normal; font-style: normal; padding-left: 0px; padding-right: 0px;}
 
