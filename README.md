@@ -30,7 +30,7 @@ To get started with the church website, follow these steps:
 
 1. Ensure that you have a web server with PHP and MySQL support installed/wamp, mamp, or xamp.
 
-2. Clone this repository to your local machine or download the source code.
+2. Clone this repository to your local machine or download the source code Ensure the code resides inside a parent directory to avoid conflict with file paths i.e church as the parent directory and paste the rest of the directories inside it.
 
 3. Import the provided SQL file into your MySQL database. This will create the necessary tables and sample data.
 
