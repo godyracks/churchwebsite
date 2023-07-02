@@ -3,8 +3,8 @@
 // Database configuration
 $host = 'localhost';
 $username = 'root';
-$password = '@godygaro66';
-$database = 'guka';
+$password = '';
+$database = 'church';
 
 // Create a database connection
 $conn = mysqli_connect($host, $username, $password, $database);
