@@ -34,7 +34,7 @@ To get started with the church website, follow these steps:
 
 3. Import the provided SQL file into your MySQL database. This will create the necessary tables and sample data.
 
-4. Update the database connection details in the appropriate files (`includes/db.php`) to match your MySQL configuration.
+4. Update the database connection details in the appropriate files (`assets/setup/db.php`) to match your MySQL configuration.
 
 5. Set up a web server to serve the website files. Ensure that the necessary dependencies (Bootstrap, jQuery) are properly linked in the HTML files.
 
